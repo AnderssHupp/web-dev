@@ -27,7 +27,6 @@ function setActive(index) {
 
 <style scoped>
 .sidebar {
-  /*height: 100vh;*/
   width: 300px;
   display: flex;
   flex-direction: column;
@@ -77,5 +76,44 @@ nav {
   font-size: 0.8rem;
   color: #ffffff;
   text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 240px;
+  }
+
+  nav {
+    padding: 2rem 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+  }
+
+  nav {
+    padding: 1rem;
+  }
+
+  .info-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .info-list li {
+    background-color: rgba(255, 255, 255, 0.08);
+    font-size: 0.9rem;
+  }
+
+  .sidebar-footer {
+    height: 48px;
+  }
+
+  .footer-content {
+    font-size: 0.72rem;
+  }
 }
 </style>

@@ -16,10 +16,17 @@ const props = defineProps({
 <style scoped>
 button {
     background-color: #ffffff;
-    width: 250px;
+    width: 100%;
+    max-width: 250px;
     padding: 0.5rem 1rem;
     border-radius: 1.5rem;
     border: none;
     cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    button {
+        max-width: none;
+    }
 }
 </style>

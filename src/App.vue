@@ -86,8 +86,7 @@ function resetForm() {
           <form @submit.prevent="handleSubmit">
             <div class="card-container">
               <Card title="Tipo de utilizador">
-                <CheckBox v-model="form.userType" :options="['Project Manager', 'Developer', 'Architect']"
-                  @change="errors.userType" />
+                <CheckBox v-model="form.userType" :options="['Project Manager', 'Developer', 'Architect']" />
                 <p v-if="errors.userType" class="inline-error">{{ errors.userType }}</p>
               </Card>
 
@@ -121,7 +120,7 @@ function resetForm() {
 }
 
 .topbar {
-  height: 56px;
+  min-height: 56px;
   background-color: #ffffff;
   display: flex;
   align-items: center;
@@ -142,6 +141,7 @@ function resetForm() {
   flex: 1;
   background-color: #f3f6f7;
   padding: 2rem 3rem;
+  min-width: 0;
 }
 
 .section {
@@ -193,5 +193,40 @@ function resetForm() {
   background-color: #ffffff;
   color: #0b1b3b;
   font-weight: bold;
+}
+
+@media (max-width: 1024px) {
+  .main {
+    padding: 1.5rem;
+  }
+
+  .section-header {
+    margin-bottom: 1rem;
+  }
+
+  .section-header h1 {
+    font-size: 1.65rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column;
+  }
+
+  .main {
+    padding: 1rem;
+  }
+
+  .section {
+    gap: 1rem;
+  }
+
+  .actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
 }
 </style>

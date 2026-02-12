@@ -62,4 +62,31 @@ button {
   color: #6b7280;
   cursor: pointer;
 }
+
+@media (max-width: 1024px) {
+  .card-content {
+    padding: 1.5rem;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-header {
+    padding: 0 1rem;
+  }
+
+  .card-header h2 {
+    font-size: 1rem;
+  }
+
+  .card-content {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    gap: 12px;
+  }
+
+  button {
+    font-size: 2rem;
+  }
+}
 </style>
