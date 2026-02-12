@@ -36,7 +36,7 @@ function handleChange(option, event) {
     selectedValues.value = [...selectedValues.value, option];
   } else if (!checked) {
     selectedValues.value = selectedValues.value.filter(
-      (selectedOption) => selectedOption !== option
+      (selectedOption) => selectedOption !== option,
     );
   }
 
@@ -50,16 +50,28 @@ watch(
   () => {
     syncFromProps();
   },
-  { immediate: true, deep: true }
+  { immediate: true, deep: true },
 );
 </script>
 
 <template>
   <div class="checkbox-group">
-    <div v-for="(option, index) in options" :key="`${option}-${index}`" class="checkbox-item">
-      <input type="checkbox" :id="`option-${index}`" class="checkbox-input" :checked="isChecked(option)"
-        @change="handleChange(option, $event)" />
-      <label :for="`option-${index}`" :class="{ 'label-active': isChecked(option) }">
+    <div
+      v-for="(option, index) in options"
+      :key="`${option}-${index}`"
+      class="checkbox-item"
+    >
+      <input
+        type="checkbox"
+        :id="`option-${index}`"
+        class="checkbox-input"
+        :checked="isChecked(option)"
+        @change="handleChange(option, $event)"
+      />
+      <label
+        :for="`option-${index}`"
+        :class="{ 'label-active': isChecked(option) }"
+      >
         {{ option }}
       </label>
     </div>
@@ -85,7 +97,7 @@ watch(
   border-radius: 50%;
   border: 1px solid #0b1b3b;
   cursor: pointer;
-  accent-color: #1da1c9;
+  accent-color: #02ade6;
 }
 
 .checkbox-item label {

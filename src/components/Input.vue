@@ -41,7 +41,6 @@ function handleInput(event) {
   <div class="input-container">
     <label :for="id">{{ label }}</label>
     <div class="input-wrapper">
-      <span v-if="prefix">{{ prefix }}</span>
       <input
         :type="type"
         :name="name"
@@ -51,9 +50,9 @@ function handleInput(event) {
         @blur="handleBlur"
         @input="handleInput"
       />
+      <span v-if="error" class="error-message">{{ error }}</span>
     </div>
   </div>
-  <p v-if="error" class="error-message">{{ error }}</p>
 </template>
 
 <style scoped>
@@ -64,16 +63,16 @@ function handleInput(event) {
 }
 
 .input-container label {
-  font-size: 0.8rem;
+  font-size: 0.875rem;
   font-weight: 600;
-  color: #6b7280;
+  color: #7f8fa4;
 }
 
 .input {
   width: 100%;
   border: none;
-  border-bottom: 1px solid #d1d5db;
-  padding: 0.5rem 0;
+  border-bottom: 2px solid #cecece;
+  padding: 0.5rem 0.75rem;
   font-size: 0.95rem;
   background: transparent;
   transition: border-color 0.2s ease;
@@ -81,13 +80,13 @@ function handleInput(event) {
 
 .input:focus {
   outline: none;
-  border-bottom: 2px solid #1da1c9;
-  border-bottom: 2px solid #bdbdbdef;
+  border-bottom: 2px solid #02ade6;
+  border-bottom: 2px solid #cecece;
 }
 
 .input-wrapper {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 0.5rem;
 }
 

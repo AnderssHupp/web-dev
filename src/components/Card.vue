@@ -26,7 +26,7 @@ const props = defineProps({
 <style scoped>
 .card {
   background-color: #ffffff;
-  border-radius: 6px;
+  border-radius: 0.15rem;
   margin-bottom: 0px;
   overflow: hidden;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
@@ -36,15 +36,15 @@ const props = defineProps({
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #4141412c;
+  background-color: #f0f0f0;
   padding: 0rem 1.5rem;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid #dfe3e9;
 }
 
 .card-header h2 {
   font-size: 1.2rem;
-  font-weight: 600;
-  color: #0b1b3b;
+  font-weight: 500;
+  color: #354052;
 }
 
 .card-content {

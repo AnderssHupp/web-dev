@@ -13,8 +13,12 @@ function setActive(index) {
   <aside class="sidebar">
     <nav class="nav">
       <ul class="info-list">
-        <li v-for="(item, index) in items" :key="item" :class="{ 'item-active': activeIndex === index }"
-          @click="setActive(index)">
+        <li
+          v-for="(item, index) in items"
+          :key="item"
+          :class="{ 'item-active': activeIndex === index }"
+          @click="setActive(index)"
+        >
           {{ item }}
         </li>
       </ul>
@@ -30,7 +34,7 @@ function setActive(index) {
   width: 300px;
   display: flex;
   flex-direction: column;
-  background-color: #3e4a5f;
+  background-color: #343f53;
   color: #ffffff;
 }
 
@@ -49,10 +53,11 @@ nav {
 }
 
 .info-list li {
-  font-size: 0.95rem;
+  font-size: 1rem;
   cursor: pointer;
   padding: 0.35rem 0.5rem;
   border-radius: 0.25rem;
+  font-weight: 400;
 }
 
 .info-list li:hover {
@@ -60,12 +65,12 @@ nav {
 }
 
 .info-list li.item-active {
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .sidebar-footer {
-  background-color: #2f3a4d;
-  border-top: 2px solid #2f3a4a;
+  background-color: #263142;
+  border-top: 2px solid #434b5d;
   height: 60px;
   display: flex;
   align-items: center;
