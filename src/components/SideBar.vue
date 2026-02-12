@@ -1,0 +1,81 @@
+<script setup>
+import { ref } from "vue";
+
+const items = ["Lorem Ipsum", "Utilizador", "Quantum solum", "Marcus Tremer"];
+const activeIndex = ref(1);
+
+function setActive(index) {
+  activeIndex.value = index;
+}
+</script>
+
+<template>
+  <aside class="sidebar">
+    <nav class="nav">
+      <ul class="info-list">
+        <li v-for="(item, index) in items" :key="item" :class="{ 'item-active': activeIndex === index }"
+          @click="setActive(index)">
+          {{ item }}
+        </li>
+      </ul>
+    </nav>
+    <footer class="sidebar-footer">
+      <p class="footer-content">2019® Premium-minds.com</p>
+    </footer>
+  </aside>
+</template>
+
+<style scoped>
+.sidebar {
+  /*height: 100vh;*/
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  background-color: #3e4a5f;
+  color: #ffffff;
+}
+
+nav {
+  flex: 1;
+  padding: 3rem 2.5rem;
+}
+
+.info-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0;
+  margin: 0;
+}
+
+.info-list li {
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 0.35rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.info-list li:hover {
+  opacity: 0.9;
+}
+
+.info-list li.item-active {
+  font-weight: bold;
+}
+
+.sidebar-footer {
+  background-color: #2f3a4d;
+  border-top: 2px solid #2f3a4a;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-content {
+  font-size: 0.8rem;
+  color: #ffffff;
+  text-align: center;
+}
+</style>
